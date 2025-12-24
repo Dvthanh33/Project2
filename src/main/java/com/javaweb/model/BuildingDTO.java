@@ -12,6 +12,7 @@ public class BuildingDTO {
     private Integer rentPrice;
     private Long serviceFee;
     private Long brokerageFee;
+
     
 	public String getName() {
 		return name;

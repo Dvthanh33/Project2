@@ -35,7 +35,7 @@ public class BuildingEntity {
     private String rentTime;
     private String decorationTime;
 
-    private BigDecimal brokerageFee;
+    private long brokerageFee;
 
     private String type;
     private String note;
@@ -54,7 +54,7 @@ public class BuildingEntity {
     private Date modifiedDate;
     private String createdBy;
     private String modifiedBy;
-	private String Address;
+	private String address;
 
     /* GETTER & SETTER */
 
@@ -242,12 +242,12 @@ public class BuildingEntity {
         this.decorationTime = decorationTime;
     }
 
-    public BigDecimal getBrokerageFee() {
+    public Long getBrokerageFee() {
         return brokerageFee;
     }
 
-    public void setBrokerageFee(BigDecimal brokerageFee) {
-        this.brokerageFee = brokerageFee;
+    public void setBrokerageFee(long l) {
+        this.brokerageFee = l;
     }
 
     public String getType() {
@@ -355,12 +355,12 @@ public class BuildingEntity {
     }
 
 	public void setAddress(String Address) {
-		this.Address=Address;
+		this.address=Address;
 		
 	}
 
 	public String getAddress() {
-		return Address;
+		return address;
 	}
 
 	public Integer getEmptyArea() {
