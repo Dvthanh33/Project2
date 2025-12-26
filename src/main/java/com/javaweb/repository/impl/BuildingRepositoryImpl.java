@@ -44,11 +44,11 @@ public class BuildingRepositoryImpl implements BuildingRepository {
             if (!StringUtil.checkString(value)) continue;
             // bỏ qua các field xử lý riêng
             if (key.equals("staffId")
-                    || key.equals("typeCode")
-                    || key.equals("areaFrom")
-                    || key.equals("areaTo")
-                    || key.equals("rentPriceFrom")
-                    || key.equals("rentPriceTo")) {
+             || key.equals("typeCode")
+             || key.equals("areaFrom")
+             || key.equals("areaTo")
+             || key.equals("rentPriceFrom")
+             || key.equals("rentPriceTo")) {
                 continue;
             }
             if (NumberUtil.isNumber(value)) {

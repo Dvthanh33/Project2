@@ -26,18 +26,14 @@ public class BuildingAPI {
     public List<BuildingDTO> getBuilding(
             HttpServletRequest request,
             @RequestParam(required = false) List<String> typeCode) {
-
         Map<String, Object> params = new HashMap<>();
-
         Enumeration<String> paramNames = request.getParameterNames();
         while (paramNames.hasMoreElements()) {
             String key = paramNames.nextElement();
-
             if (!"typeCode".equals(key)) {
                 params.put(key, request.getParameter(key));
             }
         }
-
         return buildingService.findAll(params, typeCode);
     }
 }

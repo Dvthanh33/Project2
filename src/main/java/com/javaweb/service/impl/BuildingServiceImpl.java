@@ -24,13 +24,21 @@ public class BuildingServiceImpl implements BuildingService {
     private DistrictRepository districtRepository;
     @Override
     public List<BuildingDTO> findAll(Map<String,Object> params,List<String> typeCode) {
-        List<BuildingEntity> buildingEntities = buildingRepository.findAll(params,typeCode);
-        List<BuildingDTO> result = new ArrayList<>();
+    	   List<BuildingEntity> buildingEntities = buildingRepository.findAll(params,typeCode);
+           List<BuildingDTO> result = new ArrayList<>();
         for (BuildingEntity entity : buildingEntities) {
         BuildingDTO building = new BuildingDTO();
         building.setName(entity.getName());
         DistrictEntity districtEntity = districtRepository.findNameById(entity.getDistrictId());
         building.setAddress(entity.getStreet() + "," + entity.getWard() + "," + districtEntity.getName());
+        building.setNumberOfBasement(entity.getNumberOfBasement());
+        building.setName(entity.getName());
+        building.setManagerName(entity.getManagerName());
+        building.setManagerPhone(entity.getManagerPhone());
+        building.setFloorArea(entity.getFloorArea());
+        building.setRentPrice(entity.getRentPrice());
+        building.setServiceFee(entity.getBrokerageFee());
+        building.setBrokerageFee(entity.getBrokerageFee());
         result.add(building);
         }
         return result;

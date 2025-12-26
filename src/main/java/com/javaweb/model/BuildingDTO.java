@@ -8,7 +8,6 @@ public class BuildingDTO {
     private String managerName;
     private String managerPhone;
     private Integer floorArea;
-    private Integer emptyArea;
     private Integer rentPrice;
     private Long serviceFee;
     private Long brokerageFee;
@@ -56,12 +55,6 @@ public class BuildingDTO {
 	}
 	public void setFloorArea(Integer floorArea) {
 		this.floorArea = floorArea;
-	}
-	public Integer getEmptyArea() {
-		return emptyArea;
-	}
-	public void setEmptyArea(Integer emptyArea) {
-		this.emptyArea = emptyArea;
 	}
 	public Long getServiceFee() {
 		return serviceFee;
