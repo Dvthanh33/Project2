@@ -55,6 +55,7 @@ public class BuildingEntity {
     private String createdBy;
     private String modifiedBy;
 	private String address;
+	private String rentarea;
 
     /* GETTER & SETTER */
 
@@ -369,6 +370,14 @@ public class BuildingEntity {
 
 	public void setEmptyArea(Integer emptyArea) {
 		this.emptyArea = emptyArea;
+	}
+
+	public String getRentarea() {
+		return rentarea;
+	}
+
+	public void setRentarea(String rentarea) {
+		this.rentarea = rentarea;
 	}
 	
 }
