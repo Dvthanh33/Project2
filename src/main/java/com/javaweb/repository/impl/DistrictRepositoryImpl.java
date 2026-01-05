@@ -12,22 +12,6 @@ import com.javaweb.Utils.ConnectionJDBCUtil;
 import com.javaweb.repository.DistrictRepository;
 import com.javaweb.repository.entity.BuildingEntity;
 import com.javaweb.repository.entity.DistrictEntity;
-@Repository
-public class DistrictRepositoryImpl implements DistrictRepository {
-	@Override
-	public DistrictEntity findNameById(Long id) {
-		String sql = "SELECT d.name FROM district d WHERE d.id = " + id +"";
-		DistrictEntity districtEntity = new DistrictEntity();
-		try (Connection conn = ConnectionJDBCUtil.getConnection();
-	            PreparedStatement ps = conn.prepareStatement(sql)) {
-	            ResultSet rs = ps.executeQuery();
-	            while (rs.next()) {
-	             districtEntity.setName(rs.getString("name"));
-	            }
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }
-		return districtEntity;
-	}
 
+public class DistrictRepositoryImpl {
 }
