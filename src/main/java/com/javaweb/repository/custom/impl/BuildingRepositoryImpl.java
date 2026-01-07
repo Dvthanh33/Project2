@@ -1,9 +1,4 @@
-package com.javaweb.repository.impl;
-
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
+package com.javaweb.repository.custom.impl;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -11,19 +6,18 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Repository;
 
 import com.javaweb.Utils.ConnectionJDBCUtil;
 import com.javaweb.Utils.StringUtil;
 import com.javaweb.builder.BuildingSearchBuilder;
 import com.javaweb.repository.BuildingRepository;
+import com.javaweb.repository.custom.BuildingRepositoryCustom;
 import com.javaweb.repository.entity.BuildingEntity;
 
-import lombok.Value;
 
 @Repository
-public class JDBCBuildingRepositoryImpl implements BuildingRepository {
+public class BuildingRepositoryImpl implements BuildingRepositoryCustom{
 	@PersistenceContext
 	private EntityManager entityManager;
 	private void joinTable(BuildingSearchBuilder builder, StringBuilder sql) {
@@ -61,7 +55,7 @@ public class JDBCBuildingRepositoryImpl implements BuildingRepository {
             where.append(codes).append(")");
         }
     }
-    @Override
+    //@Override
     public List<BuildingEntity> findAll(BuildingSearchBuilder builder) {
         StringBuilder sql = new StringBuilder("SELECT DISTINCT b.* FROM building b ");
         joinTable(builder, sql);
