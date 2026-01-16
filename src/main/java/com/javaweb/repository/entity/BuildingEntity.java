@@ -31,8 +31,6 @@ public class BuildingEntity {
     private Integer numberOfBasement;
     @Column(name = "floorarea")
     private Integer floorArea;
-    @Column(name = "emptyarea")
-    private Integer emptyArea;
     @Column(name = "direction")
     private String direction;
     @Column(name = "level")
@@ -85,10 +83,6 @@ public class BuildingEntity {
     private String createdBy;
     @Column(name = "modifiedby")
     private String modifiedBy;
-    @Column(name = "address")
-	private String address;
-    @Column(name = "rentarea")
-	private String rentarea;
     
     @ManyToOne
     @JoinColumn(name = "districtid")
@@ -307,22 +301,4 @@ public class BuildingEntity {
     public void setModifiedBy(String modifiedBy) {
         this.modifiedBy = modifiedBy;
     }
-	public void setAddress(String Address) {
-		this.address=Address;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public Integer getEmptyArea() {
-		return emptyArea;
-	}
-	public void setEmptyArea(Integer emptyArea) {
-		this.emptyArea = emptyArea;
-	}
-	public String getRentarea() {
-		return rentarea;
-	}
-	public void setRentarea(String rentarea) {
-		this.rentarea = rentarea;
-	}
 }

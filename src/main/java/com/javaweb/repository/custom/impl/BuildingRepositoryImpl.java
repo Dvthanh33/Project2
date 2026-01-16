@@ -36,6 +36,9 @@ public class BuildingRepositoryImpl implements BuildingRepositoryCustom{
         if (builder.getDistrictId() != null) {
             where.append(" AND b.districtid = ").append(builder.getDistrictId());
         }
+        if (builder.getManagerPhoneNumber() != null && !builder.getManagerPhoneNumber().isEmpty()) {
+            where.append(" AND b.managerphone LIKE '%").append(builder.getManagerPhoneNumber()).append("%'");
+        }
     }
     private void querySpecial(BuildingSearchBuilder builder, StringBuilder where) {
         if (builder.getAreaFrom() != null) {

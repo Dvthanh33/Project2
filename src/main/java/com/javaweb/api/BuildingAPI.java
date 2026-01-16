@@ -58,20 +58,6 @@ public class BuildingAPI {
         BuildingEntity building = buildingRepository.findById(id).get();
         return result;
     }
-//    @GetMapping("/api/building/{id}")
-//    public BuildingDTO getBuildingById(@PathVariable Long id) {
-//        BuildingEntity building = buildingRepository.findById(id)
-//            .orElseThrow(() -> new RuntimeException("Not found"));
-//        System.out.println("ID = " + building.getId());
-//        System.out.println("NAME = " + building.getName());
-//        System.out.println("ADDRESS = " + building.getAddress());
-//        System.out.println("FLOOR AREA = " + building.getFloorArea());
-//        BuildingDTO dto = new BuildingDTO();
-//        dto.setId(building.getId());
-//        dto.setName(building.getName());
-//        dto.setAddress(building.getAddress());
-//        return dto;
-//    }
     @PutMapping("/api/building")
     public void updateBuilding(@RequestBody BuildingRequestDTO buildingRequestDTO) {
         BuildingEntity builEntity = new BuildingEntity();
